@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-<<<<<<< HEAD
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
-=======
->>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
-<<<<<<< HEAD
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
@@ -21,8 +17,6 @@ const manrope = Manrope({
   variable: "--font-body",
 });
 
-=======
->>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 export const metadata: Metadata = {
   metadataBase: new URL("https://newbenzautoparts.com"),
   title: {
@@ -40,15 +34,9 @@ export const metadata: Metadata = {
   },
 };
 
-<<<<<<< HEAD
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
-=======
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en">
->>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
       <body>
         <Header />
         {children}
