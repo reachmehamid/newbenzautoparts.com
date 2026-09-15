@@ -14,17 +14,17 @@ export function CategoryCard({ title, href, image, description = "Review catalog
   return (
     <Link href={href} className={`group block overflow-hidden border border-[#DDD9D0] bg-white ${large ? "md:col-span-2" : ""}`}>
       <article className="grid h-full md:grid-cols-[1.1fr_0.9fr]">
-        <div className={`relative bg-[#F8F6F0] ${large ? "min-h-72" : "min-h-56 md:min-h-full"}`}>
-          <Image src={image} alt={`${title} product photography placeholder`} fill className="object-contain p-7 transition duration-500 group-hover:scale-[1.025]" />
+        <div className={`relative bg-[#F8F6F0] ${large ? "min-h-60" : "min-h-44 md:min-h-full"}`}>
+          <Image src={image} alt={`${title} product photography`} fill className="object-contain p-5 transition duration-500 group-hover:scale-[1.025]" />
         </div>
-        <div className="flex min-h-56 flex-col justify-between p-6">
+        <div className="flex min-h-44 flex-col justify-between p-5">
           <div>
-            <p className="mb-4 h-px w-12 bg-[#A88A5A]" />
-            <h3 className="font-display text-4xl font-semibold tracking-[-0.04em] text-[#202321]">{title}</h3>
-            <p className="mt-4 text-sm leading-7 text-[#73766F]">{description}</p>
+            <p className="mb-3 h-px w-10 bg-[#A88A5A]" />
+            <h3 className="text-xl font-bold tracking-tight text-[#202321]">{title}</h3>
+            <p className="mt-2 text-[13px] leading-5 text-[#73766F]">{description}</p>
           </div>
-          <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#202321]">
-            Explore category <ArrowRight className="h-4 w-4 text-[#A88A5A] transition group-hover:translate-x-1" />
+          <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#202321]">
+            Explore category <ArrowRight className="h-3.5 w-3.5 text-[#A88A5A] transition group-hover:translate-x-1" />
           </span>
         </div>
       </article>

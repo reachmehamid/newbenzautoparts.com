@@ -7,9 +7,9 @@ import { ProductGrid } from "./ProductGrid";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 const brandImages: Record<Brand, string> = {
-  "Mercedes-Benz": "/images/brands/mercedes-editorial-placeholder.svg",
-  BMW: "/images/brands/bmw-editorial-placeholder.svg",
-  Audi: "/images/brands/audi-editorial-placeholder.svg",
+  "Mercedes-Benz": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80",
+  BMW: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80",
+  Audi: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80",
 };
 
 export function PartsPage({ brand }: { brand: Brand }) {
@@ -17,35 +17,32 @@ export function PartsPage({ brand }: { brand: Brand }) {
 
   return (
     <main>
-      <section className="bg-[#F5F3EE]">
-        <div className="container-px mx-auto grid max-w-7xl gap-10 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:py-20">
-          <div>
-            <nav className="mb-8 text-sm font-semibold text-[#73766F]" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-[#202321]">Home</Link> <span aria-hidden="true">/</span> <span>{brand} Parts</span>
-            </nav>
-            <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-[#A88A5A]">European Parts Catalog</p>
-            <h1 className="font-display mt-4 text-6xl font-semibold leading-none tracking-[-0.055em] text-[#202321] md:text-8xl">{brand} Parts</h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#73766F]">{brandSummaries[brand]} Browse categories and verify compatibility before inquiry.</p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <WhatsAppButton href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I am looking for ${brand} parts. Please help me confirm availability and fitment.`)} />
-              <span className="text-sm font-bold text-[#73766F]">{products.length} catalog items / 5 categories</span>
-            </div>
-          </div>
-          <div className="relative min-h-[360px] overflow-hidden border border-[#DDD9D0] bg-white lg:min-h-[560px]">
-            <Image src={brandImages[brand]} alt={`${brand} automotive photography placeholder`} fill className="object-cover" priority />
+      <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <Image src={brandImages[brand]} alt={`${brand} automotive`} fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
+        <div className="container-px relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end pb-10 lg:pb-14">
+          <nav className="mb-4 text-sm font-semibold text-white/50" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-white">Home</Link> <span aria-hidden="true">/</span> <span className="text-white/70">{brand} Parts</span>
+          </nav>
+          <p className="mb-1 text-xs font-bold uppercase tracking-[0.3em] text-[#A88A5A]">European Parts Catalog</p>
+          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">{brand} Parts</h1>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">{brandSummaries[brand]}</p>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <WhatsAppButton href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I am looking for ${brand} parts. Please help me confirm availability and fitment.`)} />
+            <span className="text-xs font-semibold text-white/50">{products.length} items / 5 categories</span>
           </div>
         </div>
       </section>
 
       <ProductGrid products={products} />
 
-      <section className="bg-[#F5F3EE] pb-20">
+      <section className="bg-[#F5F3EE] pb-10 lg:pb-14">
         <div className="container-px mx-auto max-w-7xl">
-          <div className="grid gap-8 border border-[#DDD9D0] bg-white p-8 md:grid-cols-[1fr_auto] md:items-center lg:p-12">
+          <div className="grid gap-5 border border-[#DDD9D0] bg-white p-6 md:grid-cols-[1fr_auto] md:items-center lg:p-8">
             <div>
-              <p className="mb-3 h-px w-14 bg-[#A88A5A]" />
-              <h2 className="font-display text-4xl font-semibold tracking-[-0.04em] text-[#202321]">Need help finding a part?</h2>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#73766F]">Send your vehicle model, year, engine, and required part. We will help you identify the relevant category and confirm fitment details.</p>
+              <p className="mb-2 h-px w-10 bg-[#A88A5A]" />
+              <h2 className="text-xl font-bold text-[#202321]">Need help finding a part?</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#73766F]">Send your vehicle model, year, engine, and required part. We will help you confirm fitment.</p>
             </div>
             <WhatsAppButton href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I need help finding a ${brand} part. My vehicle details are:`)} />
           </div>

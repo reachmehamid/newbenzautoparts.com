@@ -5,7 +5,7 @@ Display-only catalog website for New Benz Auto Parts, built with Next.js App Rou
 ## Design System
 
 - **Palette:** warm ivory, deep graphite, muted gray, soft border, restrained bronze accent
-- **Typography:** Cormorant Garamond (editorial headings) + Manrope (clean body/UI)
+- **Typography:** Inter (clean, modern sans-serif throughout)
 - **Style:** premium automotive catalog, editorial layouts, restrained colors, professional product cards
 
 ## Pages
