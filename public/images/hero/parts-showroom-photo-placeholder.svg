@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-label="Automotive parts photography replacement placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d7d0c3"/><stop offset="0.42" stop-color="#f5f3ee"/><stop offset="1" stop-color="#2a2d2a"/></linearGradient>
+    <radialGradient id="light" cx="38%" cy="28%" r="58%"><stop stop-color="#fff" stop-opacity="0.62"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.055"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <rect width="1600" height="1100" fill="url(#light)"/>
+  <rect width="1600" height="1100" filter="url(#grain)" opacity="0.45"/>
+  <ellipse cx="860" cy="720" rx="520" ry="120" fill="#151716" opacity="0.18"/>
+  <circle cx="625" cy="565" r="210" fill="#c8c2b7" stroke="#575a54" stroke-width="42"/>
+  <circle cx="625" cy="565" r="82" fill="#f5f3ee" stroke="#8f8a7d" stroke-width="24"/>
+  <rect x="830" y="365" width="380" height="245" rx="36" fill="#f8f7f3" stroke="#c8c2b7" stroke-width="16"/>
+  <path d="M876 430h286M876 492h240M876 554h190" stroke="#b8b2a6" stroke-width="24" stroke-linecap="round"/>
+  <path d="M395 750c230-70 555-82 840-10" stroke="#a88a5a" stroke-width="16" stroke-linecap="round" opacity="0.75"/>
+  <text x="96" y="960" fill="#202321" font-family="Arial, sans-serif" font-size="34" font-weight="700" opacity="0.72">Professional automotive photography placeholder</text>
+  <text x="96" y="1012" fill="#73766f" font-family="Arial, sans-serif" font-size="24">Replace with licensed workshop or product photography before final publication.</text>
+</svg>

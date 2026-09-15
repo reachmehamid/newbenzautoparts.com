@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Mercedes-Benz editorial photography replacement placeholder">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#efebe2"/><stop offset="0.55" stop-color="#b9b3a6"/><stop offset="1" stop-color="#202321"/></linearGradient><filter id="grain"><feTurbulence baseFrequency="0.75" numOctaves="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.06"/></feComponentTransfer></filter></defs>
+  <rect width="900" height="1200" fill="url(#g)"/><rect width="900" height="1200" filter="url(#grain)"/>
+  <path d="M95 760c165-210 420-305 710-250" fill="none" stroke="#f5f3ee" stroke-width="34" opacity="0.72"/>
+  <circle cx="292" cy="778" r="92" fill="#151716" opacity="0.85"/><circle cx="665" cy="778" r="92" fill="#151716" opacity="0.85"/>
+  <text x="70" y="1020" fill="#f5f3ee" font-family="Arial" font-size="30" font-weight="700">Automotive photo placeholder</text>
+</svg>

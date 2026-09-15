@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="BMW editorial photography replacement placeholder">
+  <defs><linearGradient id="g" x1="1" x2="0" y1="0" y2="1"><stop stop-color="#f5f3ee"/><stop offset="0.5" stop-color="#c8c2b7"/><stop offset="1" stop-color="#151716"/></linearGradient><filter id="grain"><feTurbulence baseFrequency="0.72" numOctaves="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.06"/></feComponentTransfer></filter></defs>
+  <rect width="900" height="1200" fill="url(#g)"/><rect width="900" height="1200" filter="url(#grain)"/>
+  <path d="M120 650h660l-105-145H270z" fill="#202321" opacity="0.72"/><path d="M210 650h480" stroke="#a88a5a" stroke-width="18"/>
+  <circle cx="300" cy="755" r="86" fill="#151716" opacity="0.88"/><circle cx="610" cy="755" r="86" fill="#151716" opacity="0.88"/>
+  <text x="70" y="1020" fill="#f5f3ee" font-family="Arial" font-size="30" font-weight="700">Automotive photo placeholder</text>
+</svg>

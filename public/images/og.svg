@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="New Benz Auto Parts editorial catalog preview">
+  <rect width="1200" height="630" fill="#F5F3EE"/>
+  <rect x="725" y="0" width="475" height="630" fill="#151716"/>
+  <rect x="72" y="80" width="48" height="2" fill="#A88A5A"/>
+  <text x="72" y="150" fill="#A88A5A" font-family="Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="6">EUROPEAN AUTOMOTIVE PARTS</text>
+  <text x="72" y="278" fill="#202321" font-family="Georgia, serif" font-size="82" font-weight="600">New Benz</text>
+  <text x="72" y="370" fill="#202321" font-family="Georgia, serif" font-size="82" font-weight="600">Auto Parts</text>
+  <text x="72" y="450" fill="#73766F" font-family="Arial, sans-serif" font-size="28" font-weight="600">Mercedes-Benz • BMW • Audi Parts Catalog</text>
+  <circle cx="935" cy="285" r="150" fill="#C8C2B7" stroke="#F5F3EE" stroke-width="28"/>
+  <circle cx="935" cy="285" r="58" fill="#151716" stroke="#A88A5A" stroke-width="18"/>
+  <rect x="812" y="455" width="250" height="48" rx="24" fill="#A88A5A" opacity="0.85"/>
+  <text x="842" y="488" fill="#151716" font-family="Arial, sans-serif" font-size="18" font-weight="800">DISPLAY-ONLY CATALOG</text>
+</svg>

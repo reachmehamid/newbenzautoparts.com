@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Audi editorial photography replacement placeholder">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#151716"/><stop offset="0.52" stop-color="#8e887c"/><stop offset="1" stop-color="#f5f3ee"/></linearGradient><filter id="grain"><feTurbulence baseFrequency="0.72" numOctaves="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.06"/></feComponentTransfer></filter></defs>
+  <rect width="900" height="1200" fill="url(#g)"/><rect width="900" height="1200" filter="url(#grain)"/>
+  <path d="M100 720c210-105 465-125 700-45" fill="none" stroke="#f5f3ee" stroke-width="30" opacity="0.74"/>
+  <rect x="210" y="520" width="480" height="175" rx="42" fill="#202321" opacity="0.68"/>
+  <text x="70" y="1020" fill="#f5f3ee" font-family="Arial" font-size="30" font-weight="700">Automotive photo placeholder</text>
+</svg>

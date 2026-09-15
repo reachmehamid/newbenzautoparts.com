@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#f4f4f5"/>
+  <circle cx="620" cy="110" r="190" fill="#fee2e2"/>
+  <circle cx="400" cy="245" r="155" fill="#d4d4d8" stroke="#71717a" stroke-width="16"/>
+  <circle cx="400" cy="245" r="58" fill="#f4f4f5" stroke="#71717a" stroke-width="12"/>
+  <g fill="#71717a"><circle cx="400" cy="145" r="14"/><circle cx="500" cy="245" r="14"/><circle cx="400" cy="345" r="14"/><circle cx="300" cy="245" r="14"/></g>
+  <text x="54" y="456" fill="#18181b" font-family="Arial" font-size="48" font-weight="900">Brake Discs</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#f4f4f5"/>
+  <circle cx="650" cy="90" r="180" fill="#fee2e2"/>
+  <path d="M260 95v330" stroke="#18181b" stroke-width="36" stroke-linecap="round"/>
+  <path d="M260 145c160 35 160 90 0 125 160 35 160 90 0 125" fill="none" stroke="#b91c1c" stroke-width="34" stroke-linecap="round"/>
+  <path d="M410 120l130 255M535 145L405 400" stroke="#52525b" stroke-width="30" stroke-linecap="round"/>
+  <text x="54" y="456" fill="#18181b" font-family="Arial" font-size="44" font-weight="900">Suspension Parts</text>
+</svg>

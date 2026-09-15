@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <rect width="800" height="560" fill="#09090b"/>
+  <circle cx="170" cy="95" r="185" fill="#1d4ed8" opacity="0.35"/>
+  <circle cx="400" cy="240" r="135" fill="#0f172a" stroke="#e5e7eb" stroke-width="16"/>
+  <path d="M400 105a135 135 0 0 1 135 135H400z" fill="#2563eb"/>
+  <path d="M265 240a135 135 0 0 1 135-135v135z" fill="#f8fafc"/>
+  <path d="M400 240h135a135 135 0 0 1-135 135z" fill="#f8fafc"/>
+  <path d="M265 240h135v135a135 135 0 0 1-135-135z" fill="#2563eb"/>
+  <text x="90" y="480" fill="#fff" font-family="Arial" font-size="64" font-weight="900">BMW Parts</text>
+</svg>
