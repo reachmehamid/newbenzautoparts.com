@@ -115,7 +115,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {allFeatured.map((p, i) => (
-              <Link key={i} href={p.href} className="group rounded-2xl bg-white transition hover:shadow-lg">
+              <Link key={i} href={brandRoutes[p.brand]} className="group rounded-2xl bg-white transition hover:shadow-lg">
                 <div className="relative aspect-square overflow-hidden rounded-t-2xl bg-[#F5F5F3]">
                   <Image src={p.image} alt={p.name} fill className="object-cover transition duration-500 group-hover:scale-105" />
                 </div>
