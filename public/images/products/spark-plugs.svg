@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#f4f4f5"/>
+  <circle cx="650" cy="95" r="170" fill="#fee2e2"/>
+  <g transform="translate(310 85) rotate(25 90 170)">
+    <rect x="45" y="0" width="90" height="120" rx="18" fill="#18181b"/>
+    <rect x="35" y="110" width="110" height="135" rx="20" fill="#e5e7eb" stroke="#71717a" stroke-width="10"/>
+    <path d="M45 150h90M45 185h90M45 220h90" stroke="#71717a" stroke-width="10"/>
+    <path d="M75 245v85M115 245v85" stroke="#18181b" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="456" fill="#18181b" font-family="Arial" font-size="48" font-weight="900">Spark Plugs</text>
+</svg>

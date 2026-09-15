@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <rect width="800" height="560" fill="#111827"/>
+  <circle cx="650" cy="120" r="180" fill="#991b1b" opacity="0.42"/>
+  <circle cx="400" cy="245" r="125" fill="none" stroke="#e5e7eb" stroke-width="18"/>
+  <path d="M400 130v115M400 245l-98 70M400 245l98 70" stroke="#e5e7eb" stroke-width="18" stroke-linecap="round"/>
+  <text x="70" y="480" fill="#fff" font-family="Arial" font-size="50" font-weight="900">Mercedes-Benz</text>
+</svg>

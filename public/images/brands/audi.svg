@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <rect width="800" height="560" fill="#111111"/>
+  <circle cx="670" cy="100" r="185" fill="#b91c1c" opacity="0.35"/>
+  <g fill="none" stroke="#e5e7eb" stroke-width="16">
+    <circle cx="275" cy="240" r="82"/><circle cx="365" cy="240" r="82"/><circle cx="455" cy="240" r="82"/><circle cx="545" cy="240" r="82"/>
+  </g>
+  <text x="105" y="480" fill="#fff" font-family="Arial" font-size="64" font-weight="900">Audi Parts</text>
+</svg>

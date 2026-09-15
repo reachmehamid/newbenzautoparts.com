@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Automotive parts in a premium dark showroom">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111827"/><stop offset="0.55" stop-color="#09090b"/><stop offset="1" stop-color="#7f1d1d"/></linearGradient>
+    <radialGradient id="r" cx="35%" cy="25%" r="65%"><stop stop-color="#ef4444" stop-opacity="0.45"/><stop offset="1" stop-color="#09090b" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect width="1200" height="900" fill="url(#r)"/>
+  <path d="M90 650c180-130 390-182 632-156 145 15 274 67 388 156" fill="none" stroke="#ef4444" stroke-width="6" opacity="0.55"/>
+  <g transform="translate(155 230)">
+    <rect x="0" y="230" width="880" height="130" rx="65" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="M110 235h110l70-95h270l98 95h125c58 0 105 47 105 105v5H0v-5c0-58 47-105 110-105z" fill="#27272a" stroke="#71717a" stroke-width="3"/>
+    <circle cx="210" cy="360" r="78" fill="#09090b" stroke="#a1a1aa" stroke-width="18"/>
+    <circle cx="690" cy="360" r="78" fill="#09090b" stroke="#a1a1aa" stroke-width="18"/>
+    <path d="M320 155h220l68 80H260z" fill="#0f172a" stroke="#a1a1aa" stroke-width="3"/>
+    <rect x="80" y="278" width="185" height="22" rx="11" fill="#b91c1c"/>
+    <rect x="590" y="278" width="185" height="22" rx="11" fill="#b91c1c"/>
+  </g>
+  <g opacity="0.9" fill="none" stroke="#d4d4d8" stroke-width="5">
+    <circle cx="210" cy="160" r="48"/><path d="M178 192l-42 42"/>
+    <rect x="890" y="145" width="120" height="82" rx="18"/><path d="M910 180h80M910 205h52"/>
+  </g>
+</svg>
