@@ -1,5 +1,6 @@
 # New Benz Auto Parts
 
+<<<<<<< HEAD
 Display-only catalog website for New Benz Auto Parts, built with Next.js App Router, TypeScript, Tailwind CSS, and local catalog data.
 
 ## Design System
@@ -15,6 +16,17 @@ Display-only catalog website for New Benz Auto Parts, built with Next.js App Rou
 - `/bmw-parts` — BMW parts catalog
 - `/audi-parts` — Audi parts catalog
 - `/contact` — WhatsApp inquiry contact page
+=======
+Production-ready display-only catalog website for New Benz Auto Parts, built with Next.js App Router, TypeScript, Tailwind CSS, and local catalog data.
+
+## Pages
+
+- `/` - Home
+- `/mercedes-parts` - Mercedes-Benz parts catalog
+- `/bmw-parts` - BMW parts catalog
+- `/audi-parts` - Audi parts catalog
+- `/contact` - WhatsApp inquiry contact page
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 
 ## Local Development
 
@@ -56,6 +68,7 @@ Product cards generate pre-filled WhatsApp messages with brand, category, produc
 
 ## Image Replacement
 
+<<<<<<< HEAD
 Current images are local neutral placeholders under `public/images/hero`, `public/images/brands`, `public/images/categories`, and `public/images/products`. Product placeholders are explicitly labeled "Product image coming soon" and should be replaced with licensed product photography before final publication. Keep the same paths, or update the paths in `data/products.ts` and page components. Do not use unlicensed scraped images or imply manufacturer affiliation.
 
 Recommended replacement workflow:
@@ -63,6 +76,9 @@ Recommended replacement workflow:
 2. Place images in `public/images/products/` with descriptive filenames
 3. Update `categoryImages` in `data/products.ts` to point to the new files
 4. Keep images at consistent dimensions (e.g. 900×640px) with neutral backgrounds
+=======
+Current images are local SVG placeholders under `public/images/`. They are category-relevant and generic. Replace them with real photography later while keeping the same paths, or update the paths in `data/products.ts` and page components.
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 
 ## GitHub
 
@@ -87,4 +103,7 @@ git push -u origin main
 - No backend or database is configured.
 - The contact form opens WhatsApp with encoded inquiry details instead of sending email.
 - Catalog compatibility is indicative and must be confirmed with vehicle model, year, engine, and OEM reference before ordering.
+<<<<<<< HEAD
 - Product images are neutral placeholders awaiting licensed photography.
+=======
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85

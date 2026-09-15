@@ -39,11 +39,19 @@ export const brandSummaries: Record<Brand, string> = {
 };
 
 const categoryImages: Record<Category, string> = {
+<<<<<<< HEAD
   "Brake Pads": "/images/products/brake-pad-photo-placeholder.svg",
   "Brake Discs": "/images/products/brake-disc-photo-placeholder.svg",
   "Oil Filters": "/images/products/oil-filter-photo-placeholder.svg",
   "Air Filters": "/images/products/air-filter-photo-placeholder.svg",
   "Suspension Parts": "/images/products/suspension-photo-placeholder.svg",
+=======
+  "Brake Pads": "/images/products/brake-pads.svg",
+  "Brake Discs": "/images/products/brake-discs.svg",
+  "Oil Filters": "/images/products/oil-filters.svg",
+  "Air Filters": "/images/products/air-filters.svg",
+  "Suspension Parts": "/images/products/suspension-parts.svg",
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 };
 
 const fitmentNote =

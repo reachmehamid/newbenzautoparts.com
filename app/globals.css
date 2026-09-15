@@ -2,12 +2,17 @@
 
 :root {
   color-scheme: light;
+<<<<<<< HEAD
   --background: #f5f3ee;
   --foreground: #202321;
   --muted: #73766f;
   --border: #ddd9d0;
   --charcoal: #151716;
   --bronze: #a88a5a;
+=======
+  --background: #f6f6f5;
+  --foreground: #09090b;
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 }
 
 * {
@@ -37,8 +42,12 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
+<<<<<<< HEAD
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
+=======
+  font-family: Arial, Helvetica, sans-serif;
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
 }
 
 a {
@@ -46,6 +55,7 @@ a {
 }
 
 ::selection {
+<<<<<<< HEAD
   background: var(--bronze);
   color: white;
 }
@@ -72,3 +82,8 @@ a {
     padding-right: 2rem;
   }
 }
+=======
+  background: #b91c1c;
+  color: white;
+}
+>>>>>>> 3e5831ed6ee6134c6c7c70118e9c9d160167bd85
