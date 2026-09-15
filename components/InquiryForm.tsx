@@ -53,51 +53,56 @@ Thank you.`;
   }
 
   return (
-    <form onSubmit={submit} className="border border-[#DDD9D0] bg-white p-5 md:p-6" noValidate>
-      <div className="mb-5 border-b border-[#DDD9D0] pb-4">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#A88A5A]">Inquiry Form</p>
-        <h2 className="mt-1.5 text-xl font-bold text-[#202321]">Vehicle details</h2>
+    <form onSubmit={submit} className="rounded-2xl border border-[#E5E5E3] bg-white p-6 md:p-8" noValidate>
+      <div className="mb-6 border-b border-[#E5E5E3] pb-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B8943E]">Inquiry Form</p>
+        <h2 className="mt-1 text-xl font-bold text-[#1A1A1A]">Vehicle details</h2>
       </div>
 
       {errors.length ? (
-        <div className="mb-4 border border-[#A88A5A]/45 bg-[#F5F3EE] p-3 text-sm text-[#202321]" role="alert">
-          {errors.map((error) => <p key={error}>{error}</p>)}
+        <div className="mb-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700" role="alert">
+          {errors.map((e) => <p key={e}>{e}</p>)}
         </div>
       ) : null}
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Field label="Full Name" value={values.fullName} onChange={(value) => update("fullName", value)} required />
-        <Field label="Email" type="email" value={values.email} onChange={(value) => update("email", value)} />
-        <Field label="Phone / WhatsApp" value={values.phone} onChange={(value) => update("phone", value)} required />
-        <label className="grid gap-1.5 text-sm font-semibold text-[#202321]">
-          Vehicle Brand
-          <select value={values.brand} onChange={(event) => update("brand", event.target.value)} className="border border-[#DDD9D0] bg-[#F8F6F0] px-3 py-2.5 text-sm font-semibold outline-none transition focus:border-[#A88A5A]">
-            <option>Mercedes-Benz</option>
-            <option>BMW</option>
-            <option>Audi</option>
-          </select>
-        </label>
-        <Field label="Vehicle Model" value={values.model} onChange={(value) => update("model", value)} required />
-        <Field label="Model Year" value={values.year} onChange={(value) => update("year", value)} required />
-        <Field label="Required Part" value={values.part} onChange={(value) => update("part", value)} required className="md:col-span-2" />
-        <label className="grid gap-1.5 text-sm font-semibold text-[#202321] md:col-span-2">
+        <Input label="Full Name" value={values.fullName} onChange={(v) => update("fullName", v)} required />
+        <Input label="Email" type="email" value={values.email} onChange={(v) => update("email", v)} />
+        <Input label="Phone / WhatsApp" value={values.phone} onChange={(v) => update("phone", v)} required />
+        <Select label="Vehicle Brand" value={values.brand} onChange={(v) => update("brand", v)} options={["Mercedes-Benz", "BMW", "Audi"]} />
+        <Input label="Vehicle Model" value={values.model} onChange={(v) => update("model", v)} required />
+        <Input label="Model Year" value={values.year} onChange={(v) => update("year", v)} required />
+        <Input label="Required Part" value={values.part} onChange={(v) => update("part", v)} required className="md:col-span-2" />
+        <label className="grid gap-1.5 text-sm font-semibold text-[#1A1A1A] md:col-span-2">
           Message
-          <textarea value={values.message} onChange={(event) => update("message", event.target.value)} rows={4} className="border border-[#DDD9D0] bg-[#F8F6F0] px-3 py-2.5 text-sm font-semibold outline-none transition focus:border-[#A88A5A]" />
+          <textarea value={values.message} onChange={(e) => update("message", e.target.value)} rows={4} className="rounded-xl border border-[#E5E5E3] bg-[#F5F5F3] px-4 py-3 text-sm outline-none transition placeholder:text-[#999] focus:border-[#B8943E]" />
         </label>
       </div>
-      <button type="submit" className="mt-4 w-full bg-[#202321] px-6 py-3 text-sm font-bold text-[#F5F3EE] transition hover:bg-[#151716]">
+
+      <button type="submit" className="mt-5 w-full rounded-full bg-[#B8943E] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#A07E30]">
         Send Inquiry on WhatsApp
       </button>
-      <p className="mt-3 text-xs leading-5 text-[#73766F]">This form opens WhatsApp with your inquiry details. You can also email info@newbenzautoparts.com.</p>
+      <p className="mt-3 text-[12px] text-[#6B6B6B]">Opens WhatsApp with your details. You can also email info@newbenzautoparts.com.</p>
     </form>
   );
 }
 
-function Field({ label, value, onChange, type = "text", required = false, className = "" }: { label: string; value: string; onChange: (value: string) => void; type?: string; required?: boolean; className?: string }) {
+function Input({ label, value, onChange, type = "text", required = false, className = "" }: { label: string; value: string; onChange: (v: string) => void; type?: string; required?: boolean; className?: string }) {
   return (
-    <label className={`grid gap-1.5 text-sm font-semibold text-[#202321] ${className}`}>
-      {label}{required ? <span className="sr-only"> required</span> : null}
-      <input type={type} value={value} onChange={(event) => onChange(event.target.value)} className="border border-[#DDD9D0] bg-[#F8F6F0] px-3 py-2.5 text-sm font-semibold outline-none transition focus:border-[#A88A5A]" />
+    <label className={`grid gap-1.5 text-sm font-semibold text-[#1A1A1A] ${className}`}>
+      {label}{required && <span className="text-red-500">*</span>}
+      <input type={type} value={value} onChange={(e) => onChange(e.target.value)} className="rounded-xl border border-[#E5E5E3] bg-[#F5F5F3] px-4 py-3 text-sm outline-none transition placeholder:text-[#999] focus:border-[#B8943E]" />
+    </label>
+  );
+}
+
+function Select({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: string[] }) {
+  return (
+    <label className="grid gap-1.5 text-sm font-semibold text-[#1A1A1A]">
+      {label}
+      <select value={value} onChange={(e) => onChange(e.target.value)} className="rounded-xl border border-[#E5E5E3] bg-[#F5F5F3] px-4 py-3 text-sm font-semibold outline-none transition focus:border-[#B8943E]">
+        {options.map((o) => <option key={o}>{o}</option>)}
+      </select>
     </label>
   );
 }

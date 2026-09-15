@@ -4,9 +4,9 @@ Display-only catalog website for New Benz Auto Parts, built with Next.js App Rou
 
 ## Design System
 
-- **Palette:** warm ivory, deep graphite, muted gray, soft border, restrained bronze accent
-- **Typography:** Inter (clean, modern sans-serif throughout)
-- **Style:** premium automotive catalog, editorial layouts, restrained colors, professional product cards
+- **Palette:** clean white, warm gray (#F5F5F3), dark (#111111), gold accent (#B8943E)
+- **Typography:** DM Sans (clean, modern sans-serif)
+- **Style:** Shopify-inspired storefront — soft shadows, rounded cards, minimal borders, hover effects
 
 ## Pages
 
@@ -54,15 +54,9 @@ Product and general inquiry links use:
 
 Product cards generate pre-filled WhatsApp messages with brand, category, product name, part reference, compatible models, and compatible years.
 
-## Image Replacement
+## Images
 
-Current images are local neutral placeholders under `public/images/hero`, `public/images/brands`, `public/images/categories`, and `public/images/products`. Product placeholders are explicitly labeled "Product image coming soon" and should be replaced with licensed product photography before final publication. Keep the same paths, or update the paths in `data/products.ts` and page components. Do not use unlicensed scraped images or imply manufacturer affiliation.
-
-Recommended replacement workflow:
-1. Source product photography from reputable manufacturers/distributors
-2. Place images in `public/images/products/` with descriptive filenames
-3. Update `categoryImages` in `data/products.ts` to point to the new files
-4. Keep images at consistent dimensions (e.g. 900x640px) with neutral backgrounds
+Brand and category images use Unsplash automotive photography. Product images are local SVG placeholders in `public/images/products/`. Replace with licensed photography before publication.
 
 ## GitHub
 

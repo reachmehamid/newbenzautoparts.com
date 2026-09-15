@@ -5,11 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { getGeneralWhatsAppUrl } from "@/lib/whatsapp";
-import { WhatsAppButton } from "./WhatsAppButton";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/mercedes-parts", label: "Mercedes" },
+  { href: "/mercedes-parts", label: "Mercedes-Benz" },
   { href: "/bmw-parts", label: "BMW" },
   { href: "/audi-parts", label: "Audi" },
   { href: "/contact", label: "Contact" },
@@ -20,59 +19,87 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#DDD9D0]/80 bg-[#F5F3EE]/95 backdrop-blur-xl">
-      <nav className="container-px mx-auto flex max-w-7xl items-center justify-between py-3" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center border border-[#A88A5A]/55 bg-[#202321] text-xs font-black tracking-tight text-[#F5F3EE]">NB</span>
-          <span className="leading-none">
-            <span className="block text-base font-bold tracking-tight text-[#202321]">New Benz</span>
-            <span className="block text-[9px] font-bold uppercase tracking-[0.25em] text-[#73766F]">Auto Parts</span>
-          </span>
-        </Link>
+    <header className="sticky top-0 z-50 bg-white">
+      <div className="bg-[#111111] px-4 py-2 text-center text-[11px] font-medium tracking-wide text-white/80">
+        Mercedes-Benz · BMW · Audi — Inquire via WhatsApp for availability &amp; fitment
+      </div>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          {navItems.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <Link key={item.href} href={item.href} className={`text-[13px] font-semibold transition ${active ? "text-[#A88A5A]" : "text-[#202321] hover:text-[#A88A5A]"}`}>
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
+      <div className="border-b border-[#E5E5E3]">
+        <nav className="container-site mx-auto flex items-center justify-between py-4" aria-label="Main navigation">
+          <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#111111] text-[11px] font-bold text-white">NB</span>
+            <span className="hidden leading-tight sm:block">
+              <span className="block text-[15px] font-bold text-[#1A1A1A]">New Benz</span>
+              <span className="block text-[9px] font-semibold uppercase tracking-[0.2em] text-[#6B6B6B]">Auto Parts</span>
+            </span>
+          </Link>
 
-        <div className="hidden lg:block">
-          <WhatsAppButton href={getGeneralWhatsAppUrl()} className="px-4 py-2 text-xs" />
-        </div>
+          <div className="hidden items-center gap-1 lg:flex">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`rounded-full px-4 py-2 text-[13px] font-semibold transition ${
+                    active ? "bg-[#111111] text-white" : "text-[#1A1A1A] hover:bg-[#F5F5F3]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          className="grid h-9 w-9 place-items-center border border-[#DDD9D0] text-[#202321] lg:hidden"
-          aria-label="Toggle mobile menu"
-          aria-expanded={open}
-        >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-        </button>
-      </nav>
+          <div className="flex items-center gap-3">
+            <Link
+              href={getGeneralWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden rounded-full bg-[#B8943E] px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-[#A07E30] sm:inline-flex"
+            >
+              Chat on WhatsApp
+            </Link>
 
-      {open ? (
-        <div className="border-t border-[#DDD9D0] bg-[#F5F3EE] px-4 py-3 lg:hidden">
-          <div className="mx-auto grid max-w-7xl gap-0.5">
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5E5E3] text-[#1A1A1A] transition hover:bg-[#F5F5F3] lg:hidden"
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {open && (
+        <div className="border-b border-[#E5E5E3] bg-white px-4 py-4 lg:hidden">
+          <div className="container-site mx-auto grid gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`px-3 py-2.5 text-sm font-semibold ${pathname === item.href ? "bg-white text-[#A88A5A]" : "text-[#202321]"}`}
+                className={`rounded-lg px-4 py-3 text-sm font-semibold transition ${
+                  pathname === item.href ? "bg-[#F5F5F3] text-[#B8943E]" : "text-[#1A1A1A] hover:bg-[#F5F5F3]"
+                }`}
               >
                 {item.label}
               </Link>
             ))}
-            <WhatsAppButton href={getGeneralWhatsAppUrl()} className="mt-2 w-full" />
+            <Link
+              href={getGeneralWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 rounded-full bg-[#B8943E] px-5 py-3 text-center text-sm font-bold text-white"
+            >
+              Chat on WhatsApp
+            </Link>
           </div>
         </div>
-      ) : null}
+      )}
     </header>
   );
 }

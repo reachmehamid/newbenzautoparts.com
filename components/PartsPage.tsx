@@ -4,7 +4,6 @@ import type { Brand } from "@/data/products";
 import { brandSummaries, getProductsByBrand } from "@/data/products";
 import { getGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { ProductGrid } from "./ProductGrid";
-import { WhatsAppButton } from "./WhatsAppButton";
 
 const brandImages: Record<Brand, string> = {
   "Mercedes-Benz": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80",
@@ -17,35 +16,49 @@ export function PartsPage({ brand }: { brand: Brand }) {
 
   return (
     <main>
-      <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
-        <Image src={brandImages[brand]} alt={`${brand} automotive`} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
-        <div className="container-px relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end pb-10 lg:pb-14">
-          <nav className="mb-4 text-sm font-semibold text-white/50" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-white">Home</Link> <span aria-hidden="true">/</span> <span className="text-white/70">{brand} Parts</span>
+      {/* Brand Hero */}
+      <section className="relative h-[50vh] min-h-[360px] w-full overflow-hidden bg-[#111111]">
+        <Image src={brandImages[brand]} alt={`${brand} vehicle`} fill className="object-cover opacity-50" priority />
+        <div className="container-site relative z-10 mx-auto flex h-full flex-col justify-end pb-10 lg:pb-14">
+          <nav className="mb-3 text-xs font-medium text-white/40" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-white/70">Home</Link>
+            <span className="mx-1.5">/</span>
+            <span className="text-white/60">{brand}</span>
           </nav>
-          <p className="mb-1 text-xs font-bold uppercase tracking-[0.3em] text-[#A88A5A]">European Parts Catalog</p>
-          <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">{brand} Parts</h1>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">{brandSummaries[brand]}</p>
-          <div className="mt-5 flex flex-wrap items-center gap-3">
-            <WhatsAppButton href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I am looking for ${brand} parts. Please help me confirm availability and fitment.`)} />
-            <span className="text-xs font-semibold text-white/50">{products.length} items / 5 categories</span>
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#B8943E]">Parts Catalog</p>
+          <h1 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">{brand} Parts</h1>
+          <p className="mt-2 max-w-xl text-sm text-white/50">{brandSummaries[brand]}</p>
+          <div className="mt-4 flex items-center gap-3">
+            <Link
+              href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I am looking for ${brand} parts.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-[#B8943E] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#A07E30]"
+            >
+              Inquire on WhatsApp
+            </Link>
+            <span className="text-xs text-white/40">{products.length} products</span>
           </div>
         </div>
       </section>
 
       <ProductGrid products={products} />
 
-      <section className="bg-[#F5F3EE] pb-10 lg:pb-14">
-        <div className="container-px mx-auto max-w-7xl">
-          <div className="grid gap-5 border border-[#DDD9D0] bg-white p-6 md:grid-cols-[1fr_auto] md:items-center lg:p-8">
-            <div>
-              <p className="mb-2 h-px w-10 bg-[#A88A5A]" />
-              <h2 className="text-xl font-bold text-[#202321]">Need help finding a part?</h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#73766F]">Send your vehicle model, year, engine, and required part. We will help you confirm fitment.</p>
-            </div>
-            <WhatsAppButton href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I need help finding a ${brand} part. My vehicle details are:`)} />
+      {/* Bottom CTA */}
+      <section className="border-t border-[#E5E5E3] py-10">
+        <div className="container-site mx-auto flex flex-col items-start gap-4 rounded-2xl bg-[#F5F5F3] p-6 md:flex-row md:items-center md:justify-between md:p-8">
+          <div>
+            <h2 className="text-lg font-bold text-[#1A1A1A]">Need help finding a {brand} part?</h2>
+            <p className="mt-1 text-sm text-[#6B6B6B]">Send your vehicle details and required part. We will confirm fitment.</p>
           </div>
+          <Link
+            href={getGeneralWhatsAppUrl(`Assalam o Alaikum, I need help finding a ${brand} part. My vehicle details are:`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 rounded-full bg-[#111111] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#333]"
+          >
+            Chat on WhatsApp
+          </Link>
         </div>
       </section>
     </main>
