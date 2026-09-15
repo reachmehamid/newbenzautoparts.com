@@ -31,13 +31,6 @@ const brands = [
   },
 ];
 
-const featuredProducts = [
-  { brand: "Mercedes-Benz", name: "Ceramic Brake Pads", category: "Brake Pads", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80", href: "/mercedes-parts" },
-  { brand: "BMW", name: "Performance Air Filter", category: "Air Filters", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80", href: "/bmw-parts" },
-  { brand: "Audi", name: "Premium Oil Filter", category: "Oil Filters", image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=400&q=80", href: "/audi-parts" },
-  { brand: "Mercedes-Benz", name: "Front Brake Discs", category: "Brake Discs", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=80", href: "/mercedes-parts" },
-];
-
 const features = [
   { icon: CheckCircle, title: "Genuine & OEM Parts", desc: "Verified parts from trusted suppliers" },
   { icon: Shield, title: "Fitment Guarantee", desc: "We confirm compatibility before you commit" },
@@ -67,7 +60,7 @@ export default function HomePage() {
           <h1 className="max-w-2xl text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-6xl">
             Mercedes-Benz, BMW &amp; Audi Parts
           </h1>
-          <p className="mt-4 max-w-lg text-sm leading-6 text-white/60 md:text-base md:link-7">
+          <p className="mt-4 max-w-lg text-sm leading-6 text-white/60 md:text-base md:leading-7">
             Browse our catalog of OEM and aftermarket parts. Inquire via WhatsApp to confirm availability, pricing, and fitment.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
