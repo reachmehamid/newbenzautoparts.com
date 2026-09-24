@@ -255,7 +255,7 @@ const mercedesGenuineBatteries: Product[] = [
       "Mercedes Genuine 12V starter battery with 60Ah rating for compact and mid-size Mercedes-Benz models such as the A-Class, CLA, GLA, and C-Class. Mercedes Genuine quality-matched build with reliable cold-start performance. Confirm size group, CCA rating, and terminal layout before ordering.",
     compatibleModels: ["A-Class W177", "CLA C118", "GLA H247", "C-Class W205"],
     compatibleYears: "2014-2024",
-    image: "/images/products/mercedes/battery-01.jpg",
+    image: "/images/products/mercedes/battery-60ah.jpg",
     fitmentNote,
   },
   {
@@ -268,7 +268,7 @@ const mercedesGenuineBatteries: Product[] = [
       "Mercedes Genuine 12V starter battery with 70Ah rating for mid-size Mercedes-Benz models such as the C-Class, E-Class, and GLC. Mercedes Genuine quality-matched build for reliable year-round starting and steady accessory supply. Confirm size group, CCA rating, and terminal layout before ordering.",
     compatibleModels: ["C-Class W205", "E-Class W213", "GLC X253", "GLC Coupe C253"],
     compatibleYears: "2014-2024",
-    image: "/images/products/mercedes/battery-02.jpg",
+    image: "/images/products/mercedes/battery-70ah.jpg",
     fitmentNote,
   },
   {
@@ -281,7 +281,7 @@ const mercedesGenuineBatteries: Product[] = [
       "Mercedes Genuine 12V starter battery with 80Ah rating for full-size Mercedes-Benz models such as the E-Class, GLE, and S-Class. Mercedes Genuine quality-matched build to support higher electrical loads and long-distance driving. Confirm size group, CCA rating, and terminal layout before ordering.",
     compatibleModels: ["E-Class W213", "GLE W167", "S-Class W222"],
     compatibleYears: "2014-2024",
-    image: "/images/products/mercedes/battery-03.jpg",
+    image: "/images/products/mercedes/battery-80ah.jpg",
     fitmentNote,
   },
   {
@@ -294,7 +294,7 @@ const mercedesGenuineBatteries: Product[] = [
       "Mercedes Genuine 12V starter battery with 90Ah rating for flagship and high-equipment Mercedes-Benz models such as the S-Class and GLS. Mercedes Genuine quality-matched build engineered for maximum capacity, heavy electrical loads, and stop-start systems. Confirm size group, CCA rating, and terminal layout before ordering.",
     compatibleModels: ["S-Class W222", "GLS X167", "GLE W167"],
     compatibleYears: "2014-2024",
-    image: "/images/products/mercedes/battery-08.jpg",
+    image: "/images/products/mercedes/battery-90ah.jpg",
     fitmentNote,
   },
 ];
