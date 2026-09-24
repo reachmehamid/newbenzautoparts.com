@@ -94,19 +94,6 @@ const mercedesAirFilterImages: Record<string, string> = {
   "GLC Coupe C253": "/images/products/mercedes/air-filter-09.jpg",
 };
 
-const mercedesBatteryImages: Record<string, string> = {
-  "C-Class W205": "/images/products/mercedes/battery-01.jpg",
-  "E-Class W213": "/images/products/mercedes/battery-02.jpg",
-  "S-Class W222": "/images/products/mercedes/battery-03.jpg",
-  "A-Class W177": "/images/products/mercedes/battery-04.jpg",
-  "GLA H247": "/images/products/mercedes/battery-05.jpg",
-  "GLC X253": "/images/products/mercedes/battery-06.jpg",
-  "GLE W167": "/images/products/mercedes/battery-07.jpg",
-  "GLS X167": "/images/products/mercedes/battery-08.jpg",
-  "CLA C118": "/images/products/mercedes/battery-09.jpg",
-  "GLC Coupe C253": "/images/products/mercedes/battery-10.jpg",
-};
-
 const fitmentNote =
   "Compatibility is indicative. Please confirm your vehicle model, year, engine, and OEM part number before ordering.";
 
@@ -238,9 +225,7 @@ function buildProduct(
         ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
         : brand === "Mercedes-Benz" && category === "Air Filters"
           ? mercedesAirFilterImages[modelKey] ?? categoryImages[category]
-          : brand === "Mercedes-Benz" && category === "Battery"
-            ? mercedesBatteryImages[modelKey] ?? categoryImages[category]
-            : categoryImages[category];
+          : categoryImages[category];
   const description =
     descriptionOverride ??
     `${prefix}${copy.description}`;
@@ -259,6 +244,61 @@ function buildProduct(
   };
 }
 
+const mercedesGenuineBatteries: Product[] = [
+  {
+    id: "mb-bt-060",
+    brand: "Mercedes-Benz",
+    category: "Battery",
+    name: "60Ah Mercedes Genuine Battery",
+    partNumber: "NB-MB-BT-060",
+    description:
+      "Mercedes Genuine 12V starter battery with 60Ah rating for compact and mid-size Mercedes-Benz models such as the A-Class, CLA, GLA, and C-Class. Mercedes Genuine quality-matched build with reliable cold-start performance. Confirm size group, CCA rating, and terminal layout before ordering.",
+    compatibleModels: ["A-Class W177", "CLA C118", "GLA H247", "C-Class W205"],
+    compatibleYears: "2014-2024",
+    image: "/images/products/mercedes/battery-01.jpg",
+    fitmentNote,
+  },
+  {
+    id: "mb-bt-070",
+    brand: "Mercedes-Benz",
+    category: "Battery",
+    name: "70Ah Mercedes Genuine Battery",
+    partNumber: "NB-MB-BT-070",
+    description:
+      "Mercedes Genuine 12V starter battery with 70Ah rating for mid-size Mercedes-Benz models such as the C-Class, E-Class, and GLC. Mercedes Genuine quality-matched build for reliable year-round starting and steady accessory supply. Confirm size group, CCA rating, and terminal layout before ordering.",
+    compatibleModels: ["C-Class W205", "E-Class W213", "GLC X253", "GLC Coupe C253"],
+    compatibleYears: "2014-2024",
+    image: "/images/products/mercedes/battery-02.jpg",
+    fitmentNote,
+  },
+  {
+    id: "mb-bt-080",
+    brand: "Mercedes-Benz",
+    category: "Battery",
+    name: "80Ah Mercedes Genuine Battery",
+    partNumber: "NB-MB-BT-080",
+    description:
+      "Mercedes Genuine 12V starter battery with 80Ah rating for full-size Mercedes-Benz models such as the E-Class, GLE, and S-Class. Mercedes Genuine quality-matched build to support higher electrical loads and long-distance driving. Confirm size group, CCA rating, and terminal layout before ordering.",
+    compatibleModels: ["E-Class W213", "GLE W167", "S-Class W222"],
+    compatibleYears: "2014-2024",
+    image: "/images/products/mercedes/battery-03.jpg",
+    fitmentNote,
+  },
+  {
+    id: "mb-bt-090",
+    brand: "Mercedes-Benz",
+    category: "Battery",
+    name: "90Ah Mercedes Genuine Battery",
+    partNumber: "NB-MB-BT-090",
+    description:
+      "Mercedes Genuine 12V starter battery with 90Ah rating for flagship and high-equipment Mercedes-Benz models such as the S-Class and GLS. Mercedes Genuine quality-matched build engineered for maximum capacity, heavy electrical loads, and stop-start systems. Confirm size group, CCA rating, and terminal layout before ordering.",
+    compatibleModels: ["S-Class W222", "GLS X167", "GLE W167"],
+    compatibleYears: "2014-2024",
+    image: "/images/products/mercedes/battery-08.jpg",
+    fitmentNote,
+  },
+];
+
 export const products: Product[] = [
   ...brands.flatMap((brand) =>
     categories
@@ -272,10 +312,7 @@ export const products: Product[] = [
     const description = `Replacement engine air filter element for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Matches the factory air box layout and service fitment for petrol and diesel variants. Confirm engine code, model year, and OEM reference before ordering.`;
     return buildProduct("Mercedes-Benz", "Air Filters", spec, extraIndex, description);
   }),
-  ...modelSpecs["Mercedes-Benz"].map((spec, index) => {
-    const description = `Replacement 12V starter battery reference for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Confirm the correct size group, CCA rating, and terminal layout before ordering.`;
-    return buildProduct("Mercedes-Benz", "Battery", spec, index, description);
-  }),
+  ...mercedesGenuineBatteries,
 ];
 
 export function getProductsByBrand(brand: Brand) {
