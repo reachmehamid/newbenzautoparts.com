@@ -9,6 +9,10 @@ export function ProductGrid({ products }: { products: Product[] }) {
   const [selectedCategory, setSelectedCategory] = useState<Category | "All">("All");
   const [query, setQuery] = useState("");
 
+  const availableCategories = categories.filter((category) =>
+    products.some((product) => product.category === category),
+  );
+
   const filtered = products.filter((product) => {
     const inCategory = selectedCategory === "All" || product.category === selectedCategory;
     const haystack = `${product.name} ${product.partNumber} ${product.category} ${product.compatibleModels.join(" ")} ${product.compatibleYears}`.toLowerCase();
@@ -36,7 +40,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
         </div>
 
         <div className="mb-6 flex gap-2 overflow-x-auto pb-2">
-          {(["All", ...categories] as const).map((category) => (
+          {(["All", ...availableCategories] as const).map((category) => (
             <button
               key={category}
               type="button"

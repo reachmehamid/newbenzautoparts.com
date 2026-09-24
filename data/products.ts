@@ -19,6 +19,7 @@ export const categories = [
   "Oil Filters",
   "Air Filters",
   "Suspension Parts",
+  "Battery",
 ] as const;
 
 export type Category = (typeof categories)[number];
@@ -44,6 +45,7 @@ const categoryImages: Record<Category, string> = {
   "Oil Filters": "/images/products/oil-filter-photo-placeholder.svg",
   "Air Filters": "/images/products/air-filter-photo-placeholder.svg",
   "Suspension Parts": "/images/products/suspension-photo-placeholder.svg",
+  "Battery": "/images/products/battery-photo-placeholder.svg",
 };
 
 const mercedesBrakePadImages: Record<string, string> = {
@@ -90,6 +92,19 @@ const mercedesAirFilterImages: Record<string, string> = {
   "GLS X167": "/images/products/mercedes/air-filter-03.jpg",
   "CLA C118": "/images/products/mercedes/air-filter-05.jpg",
   "GLC Coupe C253": "/images/products/mercedes/air-filter-09.jpg",
+};
+
+const mercedesBatteryImages: Record<string, string> = {
+  "C-Class W205": "/images/products/mercedes/battery-01.jpg",
+  "E-Class W213": "/images/products/mercedes/battery-02.jpg",
+  "S-Class W222": "/images/products/mercedes/battery-03.jpg",
+  "A-Class W177": "/images/products/mercedes/battery-04.jpg",
+  "GLA H247": "/images/products/mercedes/battery-05.jpg",
+  "GLC X253": "/images/products/mercedes/battery-06.jpg",
+  "GLE W167": "/images/products/mercedes/battery-07.jpg",
+  "GLS X167": "/images/products/mercedes/battery-08.jpg",
+  "CLA C118": "/images/products/mercedes/battery-09.jpg",
+  "GLC Coupe C253": "/images/products/mercedes/battery-10.jpg",
 };
 
 const fitmentNote =
@@ -176,6 +191,11 @@ const categoryCopy: Record<Category, { name: string; description: string }> = {
     description:
       "replacement suspension component reference for selected chassis applications. Confirm side, axle, trim, and OEM reference before inquiry.",
   },
+  Battery: {
+    name: "Car Battery",
+    description:
+      "replacement 12V starter battery reference for selected applications. Confirm battery size group, CCA rating, terminal layout, and OEM reference before inquiry.",
+  },
 };
 
 const brandCodes: Record<Brand, string> = {
@@ -190,6 +210,7 @@ const categoryCodes: Record<Category, string> = {
   "Oil Filters": "OF",
   "Air Filters": "AF",
   "Suspension Parts": "SP",
+  Battery: "BT",
 };
 
 const axleLabels: Partial<Record<Category, string[]>> = {
@@ -217,7 +238,9 @@ function buildProduct(
         ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
         : brand === "Mercedes-Benz" && category === "Air Filters"
           ? mercedesAirFilterImages[modelKey] ?? categoryImages[category]
-          : categoryImages[category];
+          : brand === "Mercedes-Benz" && category === "Battery"
+            ? mercedesBatteryImages[modelKey] ?? categoryImages[category]
+            : categoryImages[category];
   const description =
     descriptionOverride ??
     `${prefix}${copy.description}`;
@@ -238,14 +261,20 @@ function buildProduct(
 
 export const products: Product[] = [
   ...brands.flatMap((brand) =>
-    categories.flatMap((category) =>
-      modelSpecs[brand].map((spec, index) => buildProduct(brand, category, spec, index)),
-    ),
+    categories
+      .filter((category) => category !== "Battery")
+      .flatMap((category) =>
+        modelSpecs[brand].map((spec, index) => buildProduct(brand, category, spec, index)),
+      ),
   ),
   ...mercedesAirFilterModels.map((spec, index) => {
     const extraIndex = modelSpecs["Mercedes-Benz"].length + index;
     const description = `Replacement engine air filter element for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Matches the factory air box layout and service fitment for petrol and diesel variants. Confirm engine code, model year, and OEM reference before ordering.`;
     return buildProduct("Mercedes-Benz", "Air Filters", spec, extraIndex, description);
+  }),
+  ...modelSpecs["Mercedes-Benz"].map((spec, index) => {
+    const description = `Replacement 12V starter battery reference for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Confirm the correct size group, CCA rating, and terminal layout before ordering.`;
+    return buildProduct("Mercedes-Benz", "Battery", spec, index, description);
   }),
 ];
 
