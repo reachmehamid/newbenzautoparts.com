@@ -46,6 +46,19 @@ const categoryImages: Record<Category, string> = {
   "Suspension Parts": "/images/products/suspension-photo-placeholder.svg",
 };
 
+const mercedesBrakePadImages: Record<string, string> = {
+  "C-Class W205": "/images/products/mercedes/brake-pads-c-class-w205.svg",
+  "E-Class W213": "/images/products/mercedes/brake-pads-e-class-w213.svg",
+  "S-Class W222": "/images/products/mercedes/brake-pads-s-class-w222.svg",
+  "A-Class W177": "/images/products/mercedes/brake-pads-a-class-w177.svg",
+  "GLA H247": "/images/products/mercedes/brake-pads-gla-h247.svg",
+  "GLC X253": "/images/products/mercedes/brake-pads-glc-x253.svg",
+  "GLE W167": "/images/products/mercedes/brake-pads-gle-w167.svg",
+  "GLS X167": "/images/products/mercedes/brake-pads-gls-x167.svg",
+  "CLA C118": "/images/products/mercedes/brake-pads-cla-c118.svg",
+  "GLC Coupe C253": "/images/products/mercedes/brake-pads-glc-coupe-c253.svg",
+};
+
 const fitmentNote =
   "Compatibility is indicative. Please confirm your vehicle model, year, engine, and OEM part number before ordering.";
 
@@ -147,6 +160,11 @@ function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: 
   const label = axleLabels[category]?.[index % axleLabels[category]!.length];
   const prefix = label ? `${label} ` : "";
   const partNumber = `NB-${brandCodes[brand]}-${categoryCodes[category]}-${String(index + 1).padStart(3, "0")}`;
+  const modelKey = `${spec.model} ${spec.generation}`;
+  const image =
+    brand === "Mercedes-Benz" && category === "Brake Pads"
+      ? mercedesBrakePadImages[modelKey] ?? categoryImages[category]
+      : categoryImages[category];
 
   return {
     id: `${brandCodes[brand].toLowerCase()}-${categoryCodes[category].toLowerCase()}-${String(index + 1).padStart(3, "0")}`,
@@ -157,7 +175,7 @@ function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: 
     description: `${prefix}${copy.description}`,
     compatibleModels: [`${spec.model} ${spec.generation}`],
     compatibleYears: spec.years,
-    image: categoryImages[category],
+    image,
     fitmentNote,
   };
 }
