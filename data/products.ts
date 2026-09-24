@@ -59,6 +59,19 @@ const mercedesBrakePadImages: Record<string, string> = {
   "GLC Coupe C253": "/images/products/mercedes/brake-pads-glc-coupe-c253.jpg",
 };
 
+const mercedesBrakeDiscImages: Record<string, string> = {
+  "C-Class W205": "/images/products/mercedes/brake-discs-c-class-w205.jpg",
+  "E-Class W213": "/images/products/mercedes/brake-discs-e-class-w213.jpg",
+  "S-Class W222": "/images/products/mercedes/brake-discs-s-class-w222.jpg",
+  "A-Class W177": "/images/products/mercedes/brake-discs-a-class-w177.jpg",
+  "GLA H247": "/images/products/mercedes/brake-discs-gla-h247.jpg",
+  "GLC X253": "/images/products/mercedes/brake-discs-glc-x253.jpg",
+  "GLE W167": "/images/products/mercedes/brake-discs-gle-w167.jpg",
+  "GLS X167": "/images/products/mercedes/brake-discs-gls-x167.jpg",
+  "CLA C118": "/images/products/mercedes/brake-discs-cla-c118.jpg",
+  "GLC Coupe C253": "/images/products/mercedes/brake-discs-glc-coupe-c253.jpg",
+};
+
 const fitmentNote =
   "Compatibility is indicative. Please confirm your vehicle model, year, engine, and OEM part number before ordering.";
 
@@ -164,7 +177,9 @@ function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: 
   const image =
     brand === "Mercedes-Benz" && category === "Brake Pads"
       ? mercedesBrakePadImages[modelKey] ?? categoryImages[category]
-      : categoryImages[category];
+      : brand === "Mercedes-Benz" && category === "Brake Discs"
+        ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
+        : categoryImages[category];
 
   return {
     id: `${brandCodes[brand].toLowerCase()}-${categoryCodes[category].toLowerCase()}-${String(index + 1).padStart(3, "0")}`,
