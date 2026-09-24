@@ -10,16 +10,21 @@ for (const product of products) {
   if (!product.partNumber.startsWith("NB-")) errors.push(`Unexpected reference: ${product.id}`);
 }
 
+const expectedCategoryCounts: Record<string, number> = {
+  "Mercedes-Benz / Air Filters": 17,
+};
+
 for (const brand of brands) {
   const brandProducts = products.filter((product) => product.brand === brand);
-  if (brandProducts.length !== 50) errors.push(`${brand} has ${brandProducts.length} products, expected 50`);
   for (const category of categories) {
     const count = brandProducts.filter((product) => product.category === category).length;
-    if (count !== 10) errors.push(`${brand} / ${category} has ${count} products, expected 10`);
+    const expected = expectedCategoryCounts[`${brand} / ${category}`] ?? 10;
+    if (count !== expected)
+      errors.push(`${brand} / ${category} has ${count} products, expected ${expected}`);
   }
 }
 
-if (products.length !== 150) errors.push(`Catalog has ${products.length} products, expected 150`);
+if (products.length !== 157) errors.push(`Catalog has ${products.length} products, expected 157`);
 
 if (errors.length) {
   console.error(errors.join("\n"));

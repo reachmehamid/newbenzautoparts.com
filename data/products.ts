@@ -72,6 +72,26 @@ const mercedesBrakeDiscImages: Record<string, string> = {
   "GLC Coupe C253": "/images/products/mercedes/brake-discs-glc-coupe-c253.jpg",
 };
 
+const mercedesAirFilterImages: Record<string, string> = {
+  "C-Class W203": "/images/products/mercedes/air-filter-07.jpg",
+  "C-Class W204": "/images/products/mercedes/air-filter-08.jpg",
+  "C-Class W205": "/images/products/mercedes/air-filter-06.jpg",
+  "E-Class W210": "/images/products/mercedes/air-filter-09.jpg",
+  "E-Class W211": "/images/products/mercedes/air-filter-01.jpg",
+  "E-Class W212": "/images/products/mercedes/air-filter-02.jpg",
+  "E-Class W213": "/images/products/mercedes/air-filter-04.jpg",
+  "S-Class W220": "/images/products/mercedes/air-filter-03.jpg",
+  "S-Class W221": "/images/products/mercedes/air-filter-05.jpg",
+  "S-Class W222": "/images/products/mercedes/air-filter-13.jpg",
+  "A-Class W177": "/images/products/mercedes/air-filter-07.jpg",
+  "GLA H247": "/images/products/mercedes/air-filter-01.jpg",
+  "GLC X253": "/images/products/mercedes/air-filter-08.jpg",
+  "GLE W167": "/images/products/mercedes/air-filter-02.jpg",
+  "GLS X167": "/images/products/mercedes/air-filter-03.jpg",
+  "CLA C118": "/images/products/mercedes/air-filter-05.jpg",
+  "GLC Coupe C253": "/images/products/mercedes/air-filter-09.jpg",
+};
+
 const fitmentNote =
   "Compatibility is indicative. Please confirm your vehicle model, year, engine, and OEM part number before ordering.";
 
@@ -119,6 +139,16 @@ const modelSpecs: Record<Brand, ModelSpec[]> = {
     { model: "Q7", generation: "4M", years: "2016-2024" },
   ],
 };
+
+const mercedesAirFilterModels: ModelSpec[] = [
+  { model: "C-Class", generation: "W203", years: "2000-2007" },
+  { model: "C-Class", generation: "W204", years: "2007-2014" },
+  { model: "E-Class", generation: "W210", years: "1995-2002" },
+  { model: "E-Class", generation: "W211", years: "2002-2009" },
+  { model: "E-Class", generation: "W212", years: "2009-2016" },
+  { model: "S-Class", generation: "W220", years: "1998-2005" },
+  { model: "S-Class", generation: "W221", years: "2005-2013" },
+];
 
 const categoryCopy: Record<Category, { name: string; description: string }> = {
   "Brake Pads": {
@@ -168,7 +198,13 @@ const axleLabels: Partial<Record<Category, string[]>> = {
   "Suspension Parts": ["Front", "Rear", "Left Side", "Right Side"],
 };
 
-function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: number): Product {
+function buildProduct(
+  brand: Brand,
+  category: Category,
+  spec: ModelSpec,
+  index: number,
+  descriptionOverride?: string,
+): Product {
   const copy = categoryCopy[category];
   const label = axleLabels[category]?.[index % axleLabels[category]!.length];
   const prefix = label ? `${label} ` : "";
@@ -179,7 +215,12 @@ function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: 
       ? mercedesBrakePadImages[modelKey] ?? categoryImages[category]
       : brand === "Mercedes-Benz" && category === "Brake Discs"
         ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
-        : categoryImages[category];
+        : brand === "Mercedes-Benz" && category === "Air Filters"
+          ? mercedesAirFilterImages[modelKey] ?? categoryImages[category]
+          : categoryImages[category];
+  const description =
+    descriptionOverride ??
+    `${prefix}${copy.description}`;
 
   return {
     id: `${brandCodes[brand].toLowerCase()}-${categoryCodes[category].toLowerCase()}-${String(index + 1).padStart(3, "0")}`,
@@ -187,7 +228,7 @@ function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: 
     category,
     name: `${prefix}${copy.name} for ${spec.model} ${spec.generation}`,
     partNumber,
-    description: `${prefix}${copy.description}`,
+    description,
     compatibleModels: [`${spec.model} ${spec.generation}`],
     compatibleYears: spec.years,
     image,
@@ -195,11 +236,18 @@ function buildProduct(brand: Brand, category: Category, spec: ModelSpec, index: 
   };
 }
 
-export const products: Product[] = brands.flatMap((brand) =>
-  categories.flatMap((category) =>
-    modelSpecs[brand].map((spec, index) => buildProduct(brand, category, spec, index)),
+export const products: Product[] = [
+  ...brands.flatMap((brand) =>
+    categories.flatMap((category) =>
+      modelSpecs[brand].map((spec, index) => buildProduct(brand, category, spec, index)),
+    ),
   ),
-);
+  ...mercedesAirFilterModels.map((spec, index) => {
+    const extraIndex = modelSpecs["Mercedes-Benz"].length + index;
+    const description = `Replacement engine air filter element for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Matches the factory air box layout and service fitment for petrol and diesel variants. Confirm engine code, model year, and OEM reference before ordering.`;
+    return buildProduct("Mercedes-Benz", "Air Filters", spec, extraIndex, description);
+  }),
+];
 
 export function getProductsByBrand(brand: Brand) {
   return products.filter((product) => product.brand === brand);
