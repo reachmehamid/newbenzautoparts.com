@@ -47,16 +47,16 @@ const categoryImages: Record<Category, string> = {
 };
 
 const mercedesBrakePadImages: Record<string, string> = {
-  "C-Class W205": "/images/products/mercedes/brake-pads-c-class-w205.svg",
-  "E-Class W213": "/images/products/mercedes/brake-pads-e-class-w213.svg",
-  "S-Class W222": "/images/products/mercedes/brake-pads-s-class-w222.svg",
-  "A-Class W177": "/images/products/mercedes/brake-pads-a-class-w177.svg",
-  "GLA H247": "/images/products/mercedes/brake-pads-gla-h247.svg",
-  "GLC X253": "/images/products/mercedes/brake-pads-glc-x253.svg",
-  "GLE W167": "/images/products/mercedes/brake-pads-gle-w167.svg",
-  "GLS X167": "/images/products/mercedes/brake-pads-gls-x167.svg",
-  "CLA C118": "/images/products/mercedes/brake-pads-cla-c118.svg",
-  "GLC Coupe C253": "/images/products/mercedes/brake-pads-glc-coupe-c253.svg",
+  "C-Class W205": "/images/products/mercedes/brake-pads-c-class-w205.jpg",
+  "E-Class W213": "/images/products/mercedes/brake-pads-e-class-w213.jpg",
+  "S-Class W222": "/images/products/mercedes/brake-pads-s-class-w222.jpg",
+  "A-Class W177": "/images/products/mercedes/brake-pads-a-class-w177.jpg",
+  "GLA H247": "/images/products/mercedes/brake-pads-gla-h247.jpg",
+  "GLC X253": "/images/products/mercedes/brake-pads-glc-x253.jpg",
+  "GLE W167": "/images/products/mercedes/brake-pads-gle-w167.jpg",
+  "GLS X167": "/images/products/mercedes/brake-pads-gls-x167.jpg",
+  "CLA C118": "/images/products/mercedes/brake-pads-cla-c118.jpg",
+  "GLC Coupe C253": "/images/products/mercedes/brake-pads-glc-coupe-c253.jpg",
 };
 
 const fitmentNote =
