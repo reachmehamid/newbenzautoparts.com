@@ -14,7 +14,7 @@ const brands = [
   {
     name: "Mercedes-Benz",
     href: brandRoutes["Mercedes-Benz"],
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
     count: 30,
   },
   {
@@ -49,8 +49,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-[#111111]">
         <Image
-          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80"
-          alt="Luxury car in studio"
+          src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80"
+          alt="BMW car in studio"
           fill
           className="object-cover opacity-50"
           priority
