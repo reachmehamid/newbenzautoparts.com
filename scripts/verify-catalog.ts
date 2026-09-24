@@ -12,6 +12,7 @@ for (const product of products) {
 
 const expectedCategoryCounts: Record<string, number> = {
   "Mercedes-Benz / Air Filters": 17,
+  "Mercedes-Benz / Oil Filters": 17,
   "Mercedes-Benz / Battery": 4,
   "BMW / Battery": 0,
   "Audi / Battery": 0,
@@ -27,7 +28,7 @@ for (const brand of brands) {
   }
 }
 
-if (products.length !== 161) errors.push(`Catalog has ${products.length} products, expected 161`);
+if (products.length !== 168) errors.push(`Catalog has ${products.length} products, expected 168`);
 
 if (errors.length) {
   console.error(errors.join("\n"));

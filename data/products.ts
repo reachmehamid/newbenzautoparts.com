@@ -94,6 +94,26 @@ const mercedesAirFilterImages: Record<string, string> = {
   "GLC Coupe C253": "/images/products/mercedes/air-filter-09.jpg",
 };
 
+const mercedesOilFilterImages: Record<string, string> = {
+  "C-Class W203": "/images/products/mercedes/oil-filter-03.jpg",
+  "C-Class W204": "/images/products/mercedes/oil-filter-04.jpg",
+  "C-Class W205": "/images/products/mercedes/oil-filter-01.jpg",
+  "E-Class W210": "/images/products/mercedes/oil-filter-05.jpg",
+  "E-Class W211": "/images/products/mercedes/oil-filter-06.jpg",
+  "E-Class W212": "/images/products/mercedes/oil-filter-07.jpg",
+  "E-Class W213": "/images/products/mercedes/oil-filter-02.jpg",
+  "S-Class W220": "/images/products/mercedes/oil-filter-08.jpg",
+  "S-Class W221": "/images/products/mercedes/oil-filter-01.jpg",
+  "S-Class W222": "/images/products/mercedes/oil-filter-03.jpg",
+  "A-Class W177": "/images/products/mercedes/oil-filter-04.jpg",
+  "GLA H247": "/images/products/mercedes/oil-filter-01.jpg",
+  "GLC X253": "/images/products/mercedes/oil-filter-05.jpg",
+  "GLE W167": "/images/products/mercedes/oil-filter-06.jpg",
+  "GLS X167": "/images/products/mercedes/oil-filter-07.jpg",
+  "CLA C118": "/images/products/mercedes/oil-filter-02.jpg",
+  "GLC Coupe C253": "/images/products/mercedes/oil-filter-08.jpg",
+};
+
 const fitmentNote =
   "Compatibility is indicative. Please confirm your vehicle model, year, engine, and OEM part number before ordering.";
 
@@ -143,6 +163,16 @@ const modelSpecs: Record<Brand, ModelSpec[]> = {
 };
 
 const mercedesAirFilterModels: ModelSpec[] = [
+  { model: "C-Class", generation: "W203", years: "2000-2007" },
+  { model: "C-Class", generation: "W204", years: "2007-2014" },
+  { model: "E-Class", generation: "W210", years: "1995-2002" },
+  { model: "E-Class", generation: "W211", years: "2002-2009" },
+  { model: "E-Class", generation: "W212", years: "2009-2016" },
+  { model: "S-Class", generation: "W220", years: "1998-2005" },
+  { model: "S-Class", generation: "W221", years: "2005-2013" },
+];
+
+const mercedesOilFilterModels: ModelSpec[] = [
   { model: "C-Class", generation: "W203", years: "2000-2007" },
   { model: "C-Class", generation: "W204", years: "2007-2014" },
   { model: "E-Class", generation: "W210", years: "1995-2002" },
@@ -225,7 +255,9 @@ function buildProduct(
         ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
         : brand === "Mercedes-Benz" && category === "Air Filters"
           ? mercedesAirFilterImages[modelKey] ?? categoryImages[category]
-          : categoryImages[category];
+          : brand === "Mercedes-Benz" && category === "Oil Filters"
+            ? mercedesOilFilterImages[modelKey] ?? categoryImages[category]
+            : categoryImages[category];
   const description =
     descriptionOverride ??
     `${prefix}${copy.description}`;
@@ -311,6 +343,11 @@ export const products: Product[] = [
     const extraIndex = modelSpecs["Mercedes-Benz"].length + index;
     const description = `Replacement engine air filter element for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Matches the factory air box layout and service fitment for petrol and diesel variants. Confirm engine code, model year, and OEM reference before ordering.`;
     return buildProduct("Mercedes-Benz", "Air Filters", spec, extraIndex, description);
+  }),
+  ...mercedesOilFilterModels.map((spec, index) => {
+    const extraIndex = modelSpecs["Mercedes-Benz"].length + index;
+    const description = `Replacement engine oil filter for the Mercedes-Benz ${spec.model} (${spec.generation}, ${spec.years}). Full-flow filter sized for the factory oil filter housing and service interval for petrol and diesel variants. Confirm engine code, model year, and OEM reference before ordering.`;
+    return buildProduct("Mercedes-Benz", "Oil Filters", spec, extraIndex, description);
   }),
   ...mercedesGenuineBatteries,
 ];
