@@ -285,16 +285,16 @@ const mercedesGenuineBatteries: Product[] = [
     fitmentNote,
   },
   {
-    id: "mb-bt-090",
+    id: "mb-bt-092",
     brand: "Mercedes-Benz",
     category: "Battery",
-    name: "90Ah Mercedes Genuine Battery",
-    partNumber: "NB-MB-BT-090",
+    name: "92Ah Mercedes Genuine Battery",
+    partNumber: "NB-MB-BT-092",
     description:
-      "Mercedes Genuine 12V starter battery with 90Ah rating for flagship and high-equipment Mercedes-Benz models such as the S-Class and GLS. Mercedes Genuine quality-matched build engineered for maximum capacity, heavy electrical loads, and stop-start systems. Confirm size group, CCA rating, and terminal layout before ordering.",
+      "Mercedes Genuine 12V starter battery with 92Ah rating for flagship and high-equipment Mercedes-Benz models such as the S-Class and GLS. Mercedes Genuine quality-matched build engineered for maximum capacity, heavy electrical loads, and stop-start systems. Confirm size group, CCA rating, and terminal layout before ordering.",
     compatibleModels: ["S-Class W222", "GLS X167", "GLE W167"],
     compatibleYears: "2014-2024",
-    image: "/images/products/mercedes/battery-90ah.jpg",
+    image: "/images/products/mercedes/battery-92ah.jpg",
     fitmentNote,
   },
 ];
