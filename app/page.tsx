@@ -14,7 +14,7 @@ const brands = [
   {
     name: "Mercedes-Benz",
     href: brandRoutes["Mercedes-Benz"],
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
     count: 30,
   },
   {
