@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="BMW logo">
+  <circle cx="50" cy="50" r="44" fill="#ffffff"/>
+  <path d="M50 50L50 6A44 44 0 0 0 6 50Z" fill="#1A4F9C"/>
+  <path d="M50 50L94 50A44 44 0 0 1 50 94Z" fill="#1A4F9C"/>
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#1A1A1A" stroke-width="6"/>
+</svg>

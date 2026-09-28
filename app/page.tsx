@@ -15,20 +15,29 @@ const brands = [
     name: "Mercedes-Benz",
     href: brandRoutes["Mercedes-Benz"],
     image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+    logo: "/images/logos/mercedes-star.svg",
     count: 30,
   },
   {
     name: "BMW",
     href: brandRoutes.BMW,
     image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+    logo: "/images/logos/bmw-roundel.svg",
     count: 30,
   },
   {
     name: "Audi",
     href: brandRoutes.Audi,
     image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
+    logo: "/images/logos/audi-rings.svg",
     count: 30,
   },
+];
+
+const heroCars = [
+  { name: "BMW", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=80", logo: brands[1].logo, featured: false },
+  { name: "Mercedes-Benz", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1600&q=80", logo: brands[0].logo, featured: true },
+  { name: "Audi", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1400&q=80", logo: brands[2].logo, featured: false },
 ];
 
 const features = [
@@ -47,31 +56,56 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-[#111111]">
-        <Image
-          src="/images/hero/three-brand-lineup.svg"
-          alt="BMW on the left, a larger Mercedes-Benz in the centre and an Audi on the right, in a dark showroom"
-          fill
-          unoptimized
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
-        <div className="container-site relative z-10 mx-auto flex h-full flex-col justify-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#B8943E]">New Benz Auto Parts</p>
-          <h1 className="max-w-2xl text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-6xl">
-            Mercedes-Benz, BMW &amp; Audi Parts
-          </h1>
-          <p className="mt-4 max-w-lg text-sm leading-6 text-white/60 md:text-base md:leading-7">
-            Browse our catalog of OEM and aftermarket parts. Inquire via WhatsApp to confirm availability, pricing, and fitment.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/mercedes-parts" className="rounded-full bg-white px-6 py-3 text-sm font-bold text-[#111111] transition hover:bg-white/90">
-              Shop Mercedes Parts
-            </Link>
-            <Link href="/contact" className="rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
-              Contact Us
-            </Link>
+      <section className="relative w-full overflow-hidden bg-[#111111] lg:h-[70vh] lg:min-h-[520px]">
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 lg:block" aria-hidden>
+          <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_55%,rgba(184,148,62,0.18),transparent_70%)]" />
+        </div>
+        <div className="container-site relative mx-auto grid h-full items-center gap-6 py-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] lg:gap-8 lg:py-0">
+          <div className="z-10 text-center lg:text-left">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#B8943E]">New Benz Auto Parts</p>
+            <h1 className="text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-6xl">
+              Mercedes-Benz, BMW &amp; Audi Parts
+            </h1>
+            <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-white/60 md:text-base md:leading-7 lg:mx-0">
+              Browse our catalog of OEM and aftermarket parts. Inquire via WhatsApp to confirm availability, pricing, and fitment.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <Link href="/mercedes-parts" className="rounded-full bg-white px-6 py-3 text-sm font-bold text-[#111111] transition hover:bg-white/90">
+                Shop Mercedes Parts
+              </Link>
+              <Link href="/contact" className="rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative flex h-[38vh] min-h-[210px] w-full items-center justify-center gap-2 sm:gap-5 lg:h-[64vh] lg:min-h-[440px] lg:py-10">
+            {heroCars.map((car) => (
+              <div
+                key={car.name}
+                className={
+                  car.featured
+                    ? "relative -mx-2 z-10 h-[88%] w-[42%] shrink-0 overflow-hidden rounded-2xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)] ring-1 ring-white/25 sm:-mx-4"
+                    : "relative h-[60%] flex-1 overflow-hidden rounded-2xl opacity-75 ring-1 ring-white/10"
+                }
+              >
+                <Image
+                  src={car.image}
+                  alt={`${car.name} car`}
+                  fill
+                  sizes={car.featured ? "(min-width: 1024px) 40vw, 90vw" : "(min-width: 1024px) 25vw, 50vw"}
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute left-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 p-2 shadow-lg sm:h-12 sm:w-12">
+                  <Image src={car.logo} alt={`${car.name} logo`} width={40} height={40} className="h-full w-full object-contain" />
+                </div>
+                <p className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white/90 sm:text-xs">
+                  {car.name}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -90,6 +124,9 @@ export default function HomePage() {
               <Link key={b.name} href={b.href} className="group relative h-72 overflow-hidden rounded-2xl bg-[#111111]">
                 <Image src={b.image} alt={b.name} fill className="object-cover opacity-60 transition duration-700 group-hover:scale-105 group-hover:opacity-50" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white/95 p-2.5 shadow-lg">
+                  <Image src={b.logo} alt={`${b.name} logo`} width={40} height={40} className="h-full w-full object-contain" />
+                </div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="text-2xl font-bold text-white">{b.name}</h3>
                   <p className="mt-1 text-sm text-white/60">{b.count} products</p>

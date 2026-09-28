@@ -11,6 +11,12 @@ const brandImages: Record<Brand, string> = {
   Audi: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80",
 };
 
+const brandLogos: Record<Brand, string> = {
+  "Mercedes-Benz": "/images/logos/mercedes-star.svg",
+  BMW: "/images/logos/bmw-roundel.svg",
+  Audi: "/images/logos/audi-rings.svg",
+};
+
 export function PartsPage({ brand }: { brand: Brand }) {
   const products = getProductsByBrand(brand);
 
@@ -19,6 +25,9 @@ export function PartsPage({ brand }: { brand: Brand }) {
       {/* Brand Hero */}
       <section className="relative h-[50vh] min-h-[360px] w-full overflow-hidden bg-[#111111]">
         <Image src={brandImages[brand]} alt={`${brand} vehicle`} fill className="object-cover opacity-50" priority />
+        <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-white/95 p-3 shadow-lg">
+          <Image src={brandLogos[brand]} alt={`${brand} logo`} width={44} height={44} className="h-full w-full object-contain" />
+        </div>
         <div className="container-site relative z-10 mx-auto flex h-full flex-col justify-end pb-10 lg:pb-14">
           <nav className="mb-3 text-xs font-medium text-white/40" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white/70">Home</Link>
