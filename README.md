@@ -56,7 +56,7 @@ Product cards generate pre-filled WhatsApp messages with brand, category, produc
 
 ## Images
 
-Brand and category images use Unsplash automotive photography, except the Mercedes-Benz imagery, which is a public domain (CC0) photo of a Mercedes-AMG GLE 53 4MATIC+ stored at `public/images/brands/mercedes-amg-gle-53.jpg`. Product images are local SVG placeholders in `public/images/products/`. Replace with licensed photography before publication.
+Brand and category images use Unsplash automotive photography. Product images are local SVG placeholders in `public/images/products/`. Replace with licensed photography before publication.
 
 ## GitHub
 

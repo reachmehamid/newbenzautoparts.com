@@ -14,7 +14,7 @@ const brands = [
   {
     name: "Mercedes-Benz",
     href: brandRoutes["Mercedes-Benz"],
-    image: "/images/brands/mercedes-amg-gle-53.jpg",
+    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
     logo: "/images/logos/mercedes-star.svg",
     count: 30,
   },
@@ -36,7 +36,7 @@ const brands = [
 
 const heroCars = [
   { name: "BMW", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=80", logo: brands[1].logo, featured: false },
-  { name: "Mercedes-Benz", image: "/images/brands/mercedes-amg-gle-53.jpg", logo: brands[0].logo, featured: true },
+  { name: "Mercedes-Benz", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1600&q=80", logo: brands[0].logo, featured: true },
   { name: "Audi", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1400&q=80", logo: brands[2].logo, featured: false },
 ];
 
