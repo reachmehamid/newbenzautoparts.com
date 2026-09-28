@@ -35,9 +35,9 @@ const brands = [
 ];
 
 const heroCars = [
-  { name: "BMW", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=80", logo: brands[1].logo, featured: false },
-  { name: "Mercedes-Benz", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1600&q=80", logo: brands[0].logo, featured: true },
-  { name: "Audi", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1400&q=80", logo: brands[2].logo, featured: false },
+  { name: "BMW", model: "X5 M50d", image: "/images/hero/bmw-x5-m50d.jpg", logo: brands[1].logo, featured: false },
+  { name: "Mercedes-Benz", model: "AMG GLE 53 4MATIC+", image: "/images/hero/mercedes-amg-gle-53.jpg", logo: brands[0].logo, featured: true },
+  { name: "Audi", model: "Q8 e-tron", image: "/images/hero/audi-q8-e-tron.jpg", logo: brands[2].logo, featured: false },
 ];
 
 const features = [
@@ -91,7 +91,7 @@ export default function HomePage() {
               >
                 <Image
                   src={car.image}
-                  alt={`${car.name} car`}
+                  alt={`${car.name} ${car.model}`}
                   fill
                   sizes={car.featured ? "(min-width: 1024px) 40vw, 90vw" : "(min-width: 1024px) 25vw, 50vw"}
                   className="object-cover"
@@ -102,7 +102,7 @@ export default function HomePage() {
                   <Image src={car.logo} alt={`${car.name} logo`} width={40} height={40} className="h-full w-full object-contain" />
                 </div>
                 <p className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white/90 sm:text-xs">
-                  {car.name}
+                  {car.name} <span className="font-medium normal-case tracking-normal text-white/60">{car.model}</span>
                 </p>
               </div>
             ))}
