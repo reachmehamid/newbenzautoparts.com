@@ -6,7 +6,7 @@ import { getGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { ProductGrid } from "./ProductGrid";
 
 const brandImages: Record<Brand, string> = {
-  "Mercedes-Benz": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80",
+  "Mercedes-Benz": "/images/brands/mercedes-amg-gle-53.jpg",
   BMW: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80",
   Audi: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80",
 };
