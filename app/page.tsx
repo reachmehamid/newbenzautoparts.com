@@ -49,12 +49,14 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-[#111111]">
         <Image
-          src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80"
-          alt="BMW car in studio"
+          src="/images/hero/three-brand-lineup.svg"
+          alt="BMW on the left, a larger Mercedes-Benz in the centre and an Audi on the right, in a dark showroom"
           fill
-          className="object-cover opacity-50"
+          unoptimized
+          className="object-cover"
           priority
         />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
         <div className="container-site relative z-10 mx-auto flex h-full flex-col justify-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#B8943E]">New Benz Auto Parts</p>
           <h1 className="max-w-2xl text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-6xl">
