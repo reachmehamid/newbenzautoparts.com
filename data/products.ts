@@ -74,6 +74,8 @@ const mercedesBrakeDiscImages: Record<string, string> = {
   "GLC Coupe C253": "/images/products/mercedes/brake-discs-glc-coupe-c253.jpg",
 };
 
+const audiBrakePadImage = "/images/products/audi/brake-pads.jpg";
+
 const mercedesAirFilterImages: Record<string, string> = {
   "C-Class W203": "/images/products/mercedes/air-filter-07.jpg",
   "C-Class W204": "/images/products/mercedes/air-filter-08.jpg",
@@ -249,15 +251,17 @@ function buildProduct(
   const partNumber = `NB-${brandCodes[brand]}-${categoryCodes[category]}-${String(index + 1).padStart(3, "0")}`;
   const modelKey = `${spec.model} ${spec.generation}`;
   const image =
-    brand === "Mercedes-Benz" && category === "Brake Pads"
-      ? mercedesBrakePadImages[modelKey] ?? categoryImages[category]
-      : brand === "Mercedes-Benz" && category === "Brake Discs"
-        ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
-        : brand === "Mercedes-Benz" && category === "Air Filters"
-          ? mercedesAirFilterImages[modelKey] ?? categoryImages[category]
-          : brand === "Mercedes-Benz" && category === "Oil Filters"
-            ? mercedesOilFilterImages[modelKey] ?? categoryImages[category]
-            : categoryImages[category];
+    brand === "Audi" && category === "Brake Pads"
+      ? audiBrakePadImage
+      : brand === "Mercedes-Benz" && category === "Brake Pads"
+        ? mercedesBrakePadImages[modelKey] ?? categoryImages[category]
+        : brand === "Mercedes-Benz" && category === "Brake Discs"
+          ? mercedesBrakeDiscImages[modelKey] ?? categoryImages[category]
+          : brand === "Mercedes-Benz" && category === "Air Filters"
+            ? mercedesAirFilterImages[modelKey] ?? categoryImages[category]
+            : brand === "Mercedes-Benz" && category === "Oil Filters"
+              ? mercedesOilFilterImages[modelKey] ?? categoryImages[category]
+              : categoryImages[category];
   const description =
     descriptionOverride ??
     `${prefix}${copy.description}`;
